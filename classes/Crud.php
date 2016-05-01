@@ -2,6 +2,7 @@
 
 require_once 'DB.php';
 
+//Classe com métodos abstratos de CRUD de dados.
 abstract class Crud extends DB{
 
 	protected $table;
@@ -10,6 +11,7 @@ abstract class Crud extends DB{
 
 	abstract public function update($id);
 
+	//Método responsável por buscar dados genéricamente passando o id.
 	public function find($id)
 	{
 		$sql = "SELECT * FROM $this->table WHERE id = :id";
